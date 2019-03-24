@@ -13,7 +13,7 @@ These are the things I want to test with Quarkus.
 - [x] MicroProfile Metrics (with custom metrics)
 - [ ] MicroProfile TypeSafe REST Client
 - [ ] MicroProfile FaultTolerance
-- [x] Add SwaggerUI start page
+- [x] Add SwaggerUI start page at http://localhost:8080/
 - [x] MongoDB (needs a MongoDB running on default port)
 - [ ] Dockerfile for executable jar (alpine linux openjdk11)
 - [ ] Native executable using GraalVM
@@ -40,6 +40,19 @@ Maven home: /usr/local/Cellar/maven/3.5.4/libexec
 $ docker run --name mongodb -p 27017:27017 -d mongo:latest
 ```
 
+## URL's to check out
+- SwaggerUI : http://localhost:8080/
+- OpenAPI : http://localhost:8080/openapi 
+- Metrics : http://localhost:8080/metrics
+- Metrics : http://localhost:8080/metrics/application
+- Health : http://localhost:8080/health
+
+```
+curl http://localhost:8080/hello
+curl -X POST -H "Content-Type: text/plain" -d "teedjay" http://localhost:8080/hello
+curl http://localhost:8080/mongo
+```
+
 ## Commands to use
 ```
 # list all Quarkus extensions that can be used in the pom.xml
@@ -54,7 +67,7 @@ mvn compile quarkus:dev
 # build from scratch and run all tests
 mvn clean test
 
-# create runnable artifacts
+# create runnable artifacts (SwaggerUI on http://localhost:8080/)
 mvn clean package
 java -jar target/quarkus-1.0.0-SNAPSHOT-runner.jar
 ```
