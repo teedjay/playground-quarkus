@@ -7,16 +7,21 @@ These are the things I want to test with Quarkus.
 - [x] JAX-RS : Simple API and JSON-B
 - [x] JAX-RS : ExceptionMapper
 - [x] CDI : Scoped Injection
+- [ ] JTA : Using JDBC with JTA and JPA
 - [x] MicroProfile configuration
 - [x] MicroProfile OpenAPI (annotating with own documentation)
 - [x] MicroProfile Health (with custom health check)
 - [x] MicroProfile Metrics (with custom metrics)
+- [x] MicroProfile JWT (with Keycloak)
 - [ ] MicroProfile TypeSafe REST Client
 - [ ] MicroProfile FaultTolerance
+- [ ] MicroProfile Reactive Messaging & Streams (using Kafka extension)
 - [x] Add SwaggerUI start page at http://localhost:8080/
 - [x] MongoDB (needs a MongoDB running on default port)
 - [ ] Dockerfile for executable jar (alpine linux openjdk11)
 - [ ] Native executable using GraalVM
+- [ ] Extension : Camel
+- [ ] Extension : Kotlin
 
 ## Some comments ...
 > Doesn't require JAX-RS application (@ApplicationPath) <br/>
@@ -55,9 +60,6 @@ curl http://localhost:8080/mongo
 
 ## Commands to use
 ```
-# list all Quarkus extensions that can be used in the pom.xml
-mvn quarkus:list-extensions
-
 # clean and remove old artificts
 mvn clean
 
@@ -70,4 +72,7 @@ mvn clean test
 # create runnable artifacts (SwaggerUI on http://localhost:8080/)
 mvn clean package
 java -jar target/quarkus-1.0.0-SNAPSHOT-runner.jar
+
+# list all Quarkus extensions that can be used in the pom.xml
+mvn quarkus:list-extensions
 ```
