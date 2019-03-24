@@ -25,8 +25,9 @@ These are the things I want to test with Quarkus.
 
 ## Some comments ...
 > Doesn't require JAX-RS application (@ApplicationPath) <br/>
+> Doesn't require @Inject on config (@ConfigProperty) <br/>
 > Web pages in META-INF/resources (no webapp) <br/>
-> Need to define SureFire plugin explicit to run tests from Maven <br/>
+> Needed to define SureFire plugin explicit to run tests from Maven <br/>
 > Debugger works nice from IntelliJ (`Run -> Attach to Process`) <br/>
 > Native version with `graalvm-ce-1.0.0-rc14` and Quarkus 0.12.0 started in 0.006s on my iMac<br/>
 
