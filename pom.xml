@@ -75,8 +75,14 @@
                 </executions>
             </plugin>
             <plugin>
+                <!-- default surefire doesn't support junit5, it also needs the correct log manager -->
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.0</version>
+                <configuration>
+                    <systemProperties>
+                        <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
+                    </systemProperties>
+                </configuration>
             </plugin>
         </plugins>
     </build>
