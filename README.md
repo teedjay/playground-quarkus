@@ -7,6 +7,7 @@ These are the things I want to test with Quarkus.
 - [x] JAX-RS : Simple API and JSON-B
 - [x] JAX-RS : ExceptionMapper
 - [x] CDI : Scoped Injection
+- [x] CDI : Using @Alternative implementations for mocking
 - [ ] JTA : Using JDBC with JTA and JPA
 - [x] MicroProfile configuration
 - [x] MicroProfile OpenAPI (annotating with own documentation)

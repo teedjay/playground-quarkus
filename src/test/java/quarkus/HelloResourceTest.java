@@ -22,6 +22,17 @@ public class HelloResourceTest {
     }
 
     @Test
+    public void makeSureHelloUsesTheMockImplementation() {
+        given()
+            .when().get("/hello")
+            .then()
+                .statusCode(200)
+                .contentType(ContentType.TEXT)
+                .body(endsWith("This text came from the mock service"))
+        ;
+    }
+
+    @Test
     public void makeSurePostCreatesExceptionWithJsonPayload() {
         given()
             .body("nothing")

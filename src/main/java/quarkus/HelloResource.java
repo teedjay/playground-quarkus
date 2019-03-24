@@ -19,13 +19,16 @@ public class HelloResource {
     @Inject
     RequestScoopedBean requestScoopedBean;
 
+    @Inject
+    MockableService mockableService;
+
     @GET
     @Operation(summary = "Returns a text from the server side.",
             description = "Text contains data from microprofile config and an injected request scooped bean."
     )
     @Counted(name = "myCustomHelloCounter", absolute = true, monotonic = true)
     public String hello() {
-        return message + "\n" + requestScoopedBean.getInfoAboutWhenCreated();
+        return message + "\n" + requestScoopedBean.getInfoAboutWhenCreated() + "\n" + mockableService.getDescription();
     }
 
     @POST
