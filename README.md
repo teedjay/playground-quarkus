@@ -18,7 +18,7 @@ These are the things I want to test with Quarkus.
 - [ ] MicroProfile Reactive Messaging & Streams (using Kafka extension)
 - [x] Add SwaggerUI start page at http://localhost:8080/
 - [x] MongoDB (needs a MongoDB running on default port)
-- [ ] Dockerfile for executable jar (alpine linux openjdk11)
+- [x] Dockerfile for executable jar (openjdk11)
 - [ ] Native executable using GraalVM
 - [ ] Extension : Camel
 - [ ] Extension : Kotlin
@@ -75,4 +75,16 @@ java -jar target/quarkus-1.0.0-SNAPSHOT-runner.jar
 
 # list all Quarkus extensions that can be used in the pom.xml
 mvn quarkus:list-extensions
+```
+
+## Running in Docker
+Run the following from the root of this project.
+> NOTE : The `mongodb.url` must point to the host running MongoDB (localhost is inside container and cannot be used)
+````
+mvn clean package
+
+docker build -t my-java-app .
+docker run -it --rm --name my-running-app -p 8080:8080 -e mongodb.url=mongodb://192.168.0.2:27017 my-java-app
+
+open http://localhost:8080/
 ```
