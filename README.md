@@ -14,7 +14,7 @@ These are the things I want to test with Quarkus.
 - [x] MicroProfile Health (with custom health check)
 - [x] MicroProfile Metrics (with custom metrics)
 - [x] MicroProfile JWT (with Keycloak)
-- [ ] MicroProfile TypeSafe REST Client
+- [x] MicroProfile TypeSafe REST Client
 - [ ] MicroProfile FaultTolerance
 - [ ] MicroProfile Reactive Messaging & Streams (using Kafka extension)
 - [x] Add SwaggerUI start page at http://localhost:8080/
