@@ -18,7 +18,7 @@ public class UserResourceTest {
             .then()
             .statusCode(200)
                 .contentType(ContentType.JSON)
-                .body("size", is(10))
+                .body("$.size()", is(10))
                 .body("name", hasItems("Nicholas Runolfsdottir V", "Kurtis Weissnat", "Chelsey Dietrich"))
         ;
     }
