@@ -20,7 +20,8 @@ These are the things I want to test with Quarkus.
 - [x] Add SwaggerUI start page at http://localhost:8080/
 - [x] MongoDB (needs a MongoDB running on default port)
 - [x] Dockerfile for executable jar (openjdk11)
-- [ ] Native executable using GraalVM (worked earlier using java 8)
+- [x] Native executable in Docker container (needs Java 8)
+- [ ] Native executable using GraalVM on MacOS (worked earlier using java 8)
 - [ ] Extension : Camel
 - [ ] Extension : Kotlin
 
@@ -89,7 +90,24 @@ docker run -it --rm --name my-running-app -p 8080:8080 -e mongodb.url=mongodb://
 open http://localhost:8080/
 ```
 
-## Running as Native code
+## Running as Native code in Linux Container
+Using the swd847/centos-graal-native-image-rc13:latest docker image to build native linux binary.
+
+Before we can build, edit the `pom.xml` and use `1.8` as the Java version instead of `11`.
+We also need to skip test when building as some use Java 11 features.
+```
+mvn clean package quarkus:native-image -Dnative-image.docker-build=true -Dmaven.test.skip=true
+```
+Then build docker image with linux binary and path to SunEC native HTTPS libaray.
+```
+docker build . -t native-test -f Dockerfile.native-code
+```
+Now you can run a new Docker container with the binary.
+```
+docker run --rm -p 8080:8080 -e hello.message=RunningNative -e mongodb.url=mongodb://192.168.0.8:27017 -e userservice.url=https://jsonplaceholder.typicode.com/ native-test
+```
+
+## Running as Native code on MacOS
 Quarkus is built to support Ahead Of Time compilation and running on the GraalVM / SubstrateVM.
 This is why the ArC CDI implemtation is not 100% CDI spec compliant.
 

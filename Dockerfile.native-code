@@ -1,0 +1,9 @@
+FROM openjdk:11
+COPY ./target/quarkus-1.0.0-SNAPSHOT-runner .
+# The sunec native library, required by the SunEC provider, could not be loaded.
+# This has to be pointed to directly when starting (or by copying to run folder)
+CMD ["./quarkus-1.0.0-SNAPSHOT-runner", "-Djava.library.path=/docker-java-home/lib/"]
+
+# mvn clean package quarkus:native-image -Dnative-image.docker-build=true -Dmaven.test.skip=true
+# docker build . -t native-test -f Dockerfile.native-code
+# docker run --rm -p 8080:8080 -e hello.message=RunningNative -e mongodb.url=mongodb://192.168.0.8:27017 -e userservice.url=https://jsonplaceholder.typicode.com/ native-test
