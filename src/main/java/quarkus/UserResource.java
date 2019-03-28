@@ -17,7 +17,7 @@ import java.net.URL;
 public class UserResource {
 
     @ConfigProperty(name = "userservice.url")
-    private String userServiceURL;
+    String userServiceURL;
 
     @GET
     @Tag(name = "rest-client")

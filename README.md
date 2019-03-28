@@ -16,12 +16,13 @@ These are the things I want to test with Quarkus.
 - [x] MicroProfile JWT (with Keycloak)
 - [x] MicroProfile TypeSafe REST Client
 - [ ] MicroProfile FaultTolerance
-- [ ] MicroProfile Reactive Messaging & Streams (using Kafka extension)
+- [x] MicroProfile Reactive Messaging & Streams (using Kafka extension)
 - [x] Add SwaggerUI start page at http://localhost:8080/
 - [x] MongoDB (needs a MongoDB running on default port)
 - [x] Dockerfile for executable jar (openjdk11)
 - [x] Native executable in Docker container (needs Java 8)
 - [ ] Native executable using GraalVM on MacOS (worked earlier using java 8)
+- [x] Extension : Scheduler (triggers Kafka messages)
 - [ ] Extension : Camel
 - [ ] Extension : Kotlin
 
@@ -32,7 +33,7 @@ These are the things I want to test with Quarkus.
 > Debugger works nice from IntelliJ (`Run -> Attach to Process`) <br/>
 
 ## Pre-requisite ...
-I'm using Open JDK 11 with Maven 3.5 and a MongoDB on default port.
+I'm using Open JDK 11 with Maven 3.5 and MongoDB + Kafka running on default ports. 
 ```
 $ java -version
 openjdk version "11.0.2" 2019-01-15
@@ -44,6 +45,8 @@ Apache Maven 3.5.4 (1edded0938998edf8bf061f1ceb3cfdeccf443fe; 2018-06-17T20:33:1
 Maven home: /usr/local/Cellar/maven/3.5.4/libexec
 
 $ docker run --name mongodb -p 27017:27017 -d mongo:latest
+
+$ docker run -d --name kafka -p 9092:9092 -e KAFKA_CREATE_TOPICS="teedjay-inbound:1:1,teedjay-outbound:1:1" blacktop/kafka
 ```
 
 ## URL's to check out

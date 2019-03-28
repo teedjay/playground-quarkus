@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 public class MongoService {
 
     @ConfigProperty(name = "mongodb.url")
-    private String mongodbUrl;
+    String mongodbUrl;
 
     private MongoClient mongoClient;
 
