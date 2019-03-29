@@ -15,13 +15,12 @@ import java.util.stream.Collectors;
 
 @Path("/upload")
 @Tag(name = "others")
+@Produces(MediaType.APPLICATION_JSON)
 public class UploadResource {
 
     @POST
-    @Path("data")
-    @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.MULTIPART_FORM_DATA)
-    @Operation(summary = "Upload 'multipart/form-data' content", description = "Usage : curl -i -F 'file=@pom.xml' -F 'json={\"id\" = \"123\"}' -F 'name=teedjay' http://localhost:8080/upload/data")
+    @Operation(summary = "Upload 'multipart/form-data' content", description = "Usage : curl -i -F 'file=@pom.xml' -F 'json={\"id\" = \"123\"}' -F 'name=teedjay' http://localhost:8080/upload")
     public List<UploadedFile> uploadMultiPartData(MultipartFormDataInput request) {
         return request.getParts().stream().map(p -> new UploadedFile(p)).collect(Collectors.toList());
     }
