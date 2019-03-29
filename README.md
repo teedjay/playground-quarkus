@@ -25,6 +25,7 @@ These are the things I want to test with Quarkus.
 - [x] Extension : Scheduler (triggers Kafka messages)
 - [ ] Extension : Camel
 - [ ] Extension : Kotlin
+- [x] Others : Uploading multipart/form-data using JAX-RS (with RestEASY MultipartFormDataInput plugin)
 
 ## Some comments ...
 > Doesn't require JAX-RS application (@ApplicationPath) <br/>
