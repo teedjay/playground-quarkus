@@ -50,6 +50,35 @@ $ docker run --name mongodb -p 27017:27017 -d mongo:latest
 $ docker run -d --name kafka -p 9092:9092 -e KAFKA_CREATE_TOPICS="teedjay-inbound:1:1,teedjay-outbound:1:1" blacktop/kafka
 ```
 
+## Note on MP-JWT and groups claim
+The MP-JWT decodes the JWT and use the `groups` claim to select `roles` for RBAC.  This mean that you 
+actually need a `group` claim  in the JWT token even if you do not actually use @RolesAllowed for RBAC
+in you code.  If your JWT doesn't contain `groups` claim - Quarkus 0.12 will throw a Null Pointer Exception.
+
+If you use KeyCloak as your OIDC server your `groups` are *not* mapped into claims by default.  You
+can manually add a client mapper for "User Realm Role" into "Token Claim Name" `groups` (for access-tokens when
+using service accounts) or you  could map the "Group Membership" (when using ID-tokens and direct access grants).
+
+Get Access Token (using Service Account)
+```
+MYCLIENTCREDENTIALS = base64("client_id:client_secret")
+
+curl -X POST 'https://localhost:9443/auth/realms/quarkus/protocol/openid-connect/token' \
+-H "Content-Type: application/x-www-form-urlencoded" \
+-H "Authorization: Basic MYCLIENTCREDENTIALS" \
+-d 'grant_type=client_credentials' \
+| jq -r '.access_token'
+```
+
+Get ID Token (using Direct Access Grants)
+```
+curl -X POST -H "Content-Type:application/x-www-form-urlencoded" -d "scope=openid" -d "grant_type=password" \
+-d "client_id=CLIENTID" -d "client_secret=CLIENTSECRET" \
+-d "username=USERNAME" -d "password=PASSWORD" \
+'https://localhost:9443/auth/realms/quarkus/protocol/openid-connect/token' \
+| jq -r '.id_token'
+```
+
 ## URL's to check out
 - SwaggerUI : http://localhost:8080/
 - OpenAPI : http://localhost:8080/openapi 
