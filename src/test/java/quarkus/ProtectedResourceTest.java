@@ -6,20 +6,18 @@ import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.startsWith;
 import static org.junit.jupiter.api.Assertions.*;
 
 @QuarkusTest
-public class NiruServiceTest {
+public class ProtectedResourceTest {
 
     @Test
-    public void hello() {
+    public void makeSureMissingTokenReturnsUnauthorized() {
         given()
-            .when().get("/niru")
+            .header("Authorization", "Bearer illegal-token-value")
+            .when().get("/secret")
             .then()
-                .statusCode(200)
-                .contentType(ContentType.JSON)
-                .body("text", is("Her er data som kommer i retyur"))
+                .statusCode(401)
         ;
     }
 

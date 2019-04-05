@@ -26,7 +26,7 @@ public class ProtectedResource {
 
     @GET
     @RolesAllowed({"offline_access"})
-    public ProtectedData getTimeAndDate() {
+    public ProtectedData getSomeDataFromTheJWT() {
         ProtectedData pd = new ProtectedData();
         pd.username = preferred_username;
         pd.groups =jwt.getGroups();
