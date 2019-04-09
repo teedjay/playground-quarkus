@@ -6,6 +6,7 @@ These are the things I want to test with Quarkus.
 - [x] Run with Java 11, test with JUnit5 + RestAssured 
 - [x] JAX-RS : Simple API and JSON-B
 - [x] JAX-RS : ExceptionMapper
+- [x] JSON-P : JsonPatch
 - [x] CDI : Scoped Injection
 - [x] CDI : Using @Alternative implementations for mocking
 - [ ] JTA : Using JDBC with JTA and JPA
