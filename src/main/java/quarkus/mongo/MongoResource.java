@@ -1,4 +1,4 @@
-package quarkus;
+package quarkus.mongo;
 
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.enums.SchemaType;

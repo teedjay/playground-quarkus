@@ -1,4 +1,4 @@
-package quarkus;
+package quarkus.upload;
 
 import io.quarkus.test.junit.QuarkusTest;
 import io.restassured.http.ContentType;

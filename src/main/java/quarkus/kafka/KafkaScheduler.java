@@ -1,4 +1,4 @@
-package quarkus;
+package quarkus.kafka;
 
 import io.quarkus.scheduler.Scheduled;
 

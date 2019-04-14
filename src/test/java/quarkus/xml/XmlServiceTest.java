@@ -1,4 +1,4 @@
-package quarkus;
+package quarkus.xml;
 
 import io.quarkus.test.junit.QuarkusTest;
 import io.restassured.http.ContentType;
@@ -10,16 +10,16 @@ import static org.hamcrest.CoreMatchers.startsWith;
 import static org.junit.jupiter.api.Assertions.*;
 
 @QuarkusTest
-public class NiruServiceTest {
+public class XmlServiceTest {
 
     @Test
     public void hello() {
         given()
-            .when().get("/niru")
+            .when().get("/xml")
             .then()
                 .statusCode(200)
-                .contentType(ContentType.JSON)
-                .body("text", is("Her er data som kommer i retyur"))
+                .contentType(ContentType.XML)
+                .body("XmlData.message.text()", is("Here are some return xml data"))
         ;
     }
 

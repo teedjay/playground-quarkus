@@ -4,7 +4,8 @@ Playing around with MicroProfile using Quarkus.io
 ## TODO
 These are the things I want to test with Quarkus.
 - [x] Run with Java 11, test with JUnit5 + RestAssured 
-- [x] JAX-RS : Simple API and JSON-B
+- [x] JAX-RS : Simple API with JSON (JSON-B)
+- [x] JAX-RS : Simple API with XML (JAX-B)
 - [x] JAX-RS : ExceptionMapper
 - [x] JSON-P : JsonPatch
 - [x] CDI : Scoped Injection
@@ -17,7 +18,7 @@ These are the things I want to test with Quarkus.
 - [x] MicroProfile JWT (with Keycloak)
 - [x] MicroProfile TypeSafe REST Client
 - [ ] MicroProfile FaultTolerance
-- [x] MicroProfile Reactive Messaging & Streams (using Kafka extension)
+- [x] MicroProfile Reactive Messaging & Streams (using Vert.x and Kafka extension)
 - [x] Add SwaggerUI start page at http://localhost:8080/
 - [x] MongoDB (needs a MongoDB running on default port)
 - [x] Dockerfile for executable jar (openjdk11)
@@ -26,6 +27,8 @@ These are the things I want to test with Quarkus.
 - [x] Extension : Scheduler (triggers Kafka messages)
 - [ ] Extension : Camel
 - [ ] Extension : Kotlin
+- [x] Extension : Kafka
+- [x] Extension : Vert.x
 - [x] Others : Uploading multipart/form-data using JAX-RS (with RestEASY MultipartFormDataInput plugin)
 
 ## Some comments ...
@@ -81,7 +84,11 @@ curl -X POST -H "Content-Type:application/x-www-form-urlencoded" -d "scope=openi
 ```
 
 ## URL's to check out
+Our own welcome html page :
 - SwaggerUI : http://localhost:8080/
+
+A number of built-in pages :
+- SwaggerUI : http://localhost:8080/swagger-ui
 - OpenAPI : http://localhost:8080/openapi 
 - Metrics : http://localhost:8080/metrics
 - Metrics : http://localhost:8080/metrics/application

@@ -1,4 +1,4 @@
-package quarkus;
+package quarkus.restclient;
 
 public class UserData {
 

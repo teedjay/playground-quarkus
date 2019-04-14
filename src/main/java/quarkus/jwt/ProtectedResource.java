@@ -1,4 +1,4 @@
-package quarkus;
+package quarkus.jwt;
 
 import org.eclipse.microprofile.jwt.Claim;
 import org.eclipse.microprofile.jwt.Claims;

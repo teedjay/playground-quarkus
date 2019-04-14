@@ -13,11 +13,22 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class SwaggerUITest {
 
     @TestHTTPResource("index.html")
-    URL url;
+    URL ourIndexHtmlUrl;
+
+    @TestHTTPResource("swagger-ui")
+    URL builtInSwaggerUrl;
 
     @Test
     public void makeSureIndexHtmlIsSwaggerUI() throws Exception {
-        try (InputStream in = url.openStream()) {
+        try (InputStream in = ourIndexHtmlUrl.openStream()) {
+            String contents = new String(in.readAllBytes());
+            assertTrue(contents.contains("<title>Swagger UI</title>"));
+        }
+    }
+
+    @Test
+    public void makeSureQuarkusHasBuiltInSwaggerUI() throws Exception {
+        try (InputStream in = builtInSwaggerUrl.openStream()) {
             String contents = new String(in.readAllBytes());
             assertTrue(contents.contains("<title>Swagger UI</title>"));
         }

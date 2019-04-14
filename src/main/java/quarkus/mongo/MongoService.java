@@ -1,4 +1,4 @@
-package quarkus;
+package quarkus.mongo;
 
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
@@ -6,7 +6,6 @@ import org.eclipse.microprofile.config.inject.ConfigProperty;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
-import java.time.LocalDateTime;
 
 @ApplicationScoped
 public class MongoService {

@@ -1,4 +1,4 @@
-package quarkus;
+package quarkus.restclient;
 
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.eclipse.microprofile.openapi.annotations.Operation;

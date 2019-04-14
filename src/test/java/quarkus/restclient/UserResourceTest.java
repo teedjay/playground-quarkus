@@ -1,4 +1,4 @@
-package quarkus;
+package quarkus.restclient;
 
 import io.quarkus.test.junit.QuarkusTest;
 import io.restassured.http.ContentType;

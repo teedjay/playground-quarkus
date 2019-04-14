@@ -1,4 +1,4 @@
-package quarkus;
+package quarkus.kafka;
 
 import org.eclipse.microprofile.reactive.messaging.Incoming;
 

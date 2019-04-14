@@ -62,7 +62,7 @@
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-scheduler</artifactId>
         </dependency>
-        <!-- reactive messaging vertx and kafka -->
+        <!-- reactive and asynchronous messaging with vertx and kafka -->
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-vertx</artifactId>

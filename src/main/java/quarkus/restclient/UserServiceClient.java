@@ -1,4 +1,4 @@
-package quarkus;
+package quarkus.restclient;
 
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 

@@ -1,4 +1,4 @@
-package quarkus;
+package quarkus.jwt;
 
 import java.time.LocalDateTime;
 import java.util.Set;
