@@ -38,6 +38,7 @@ These are the things I want to test with Quarkus.
 - [x] Extension : Kafka
 - [x] Extension : Vert.x
 - [x] Others : Uploading multipart/form-data using JAX-RS (with RestEASY MultipartFormDataInput plugin)
+- [ ] Bug : UsersResourceTest is disabled (does not run when quarkus-smallrye-openapi is included)
 
 ## Some comments ...
 > Doesn't require JAX-RS application (@ApplicationPath) <br/>
