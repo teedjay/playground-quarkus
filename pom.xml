@@ -16,6 +16,7 @@
         <module>quarkus-basics</module>
         <module>quarkus-kafka</module>
         <module>quarkus-mongo</module>
+        <module>quarkus-panache</module>
     </modules>
 
 </project>

@@ -1,5 +1,13 @@
 # playground-quarkus
-Playing around with MicroProfile using Quarkus.io
+Playing around with MicroProfile using Quarkus.io.
+
+Most tests are in the basic testing project, but scenarios that need external services 
+such as database and queues are located in separate sub-projects with instructions on 
+how to start pre-requsites using Docker.
+
+- [Basic Quarkus Testing](quarkus-basics/README.md)
+- [Kafka with Quarkus](quarkus-kafka/README.md)
+- [Mongo with Quarkus](quarkus-mongo/README.md)
 
 ## TODO
 These are the things I want to test with Quarkus.
@@ -10,7 +18,6 @@ These are the things I want to test with Quarkus.
 - [x] JSON-P : JsonPatch
 - [x] CDI : Scoped Injection
 - [x] CDI : Using @Alternative implementations for mocking
-- [ ] JTA : Using JDBC with JTA and JPA
 - [x] MicroProfile configuration
 - [x] MicroProfile OpenAPI (annotating with own documentation)
 - [x] MicroProfile Health (with custom health check)
@@ -25,6 +32,7 @@ These are the things I want to test with Quarkus.
 - [x] Native executable in Docker container (needs Java 8)
 - [ ] Native executable using GraalVM on MacOS (worked earlier using java 8)
 - [x] Extension : Scheduler (triggers Kafka messages)
+- [x] Extension : Panache (database using Panache with JTA and JPA/JDBC)
 - [ ] Extension : Camel
 - [ ] Extension : Kotlin
 - [x] Extension : Kafka
@@ -48,10 +56,6 @@ OpenJDK 64-Bit Server VM AdoptOpenJDK (build 11.0.2+9, mixed mode)
 $ mvn -version
 Apache Maven 3.5.4 (1edded0938998edf8bf061f1ceb3cfdeccf443fe; 2018-06-17T20:33:14+02:00)
 Maven home: /usr/local/Cellar/maven/3.5.4/libexec
-
-$ docker run --name mongodb -p 27017:27017 -d mongo:latest
-
-$ docker run -d --name kafka -p 9092:9092 -e KAFKA_CREATE_TOPICS="teedjay-inbound:1:1,teedjay-outbound:1:1" blacktop/kafka
 ```
 
 ## Note on MP-JWT and groups claim
