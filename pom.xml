@@ -17,6 +17,7 @@
         <module>quarkus-kafka</module>
         <module>quarkus-mongo</module>
         <module>quarkus-panache</module>
+        <module>quarkus-postgres</module>
     </modules>
 
 </project>

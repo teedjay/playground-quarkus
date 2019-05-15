@@ -12,7 +12,7 @@ import static org.hamcrest.CoreMatchers.is;
 public class UsersResourceTest {
 
     // Test is disabled because when quarkus-smallrye-openapi in the pom.xml
-    // the rest-assured test fails (running quarkus 0.14.0 on my Mac)
+    // the rest-assured test fails (running quarkus 0.15.0 on my Mac)
 
     @Test()
     @Disabled

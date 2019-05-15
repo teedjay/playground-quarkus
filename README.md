@@ -12,6 +12,7 @@ how to start pre-requsites using Docker.
 ## TODO
 These are the things I want to test with Quarkus.
 - [x] Run with Java 11, test with JUnit5 + RestAssured 
+- [ ] Remote developer mode (hot reload in container)
 - [x] JAX-RS : Simple API with JSON (JSON-B)
 - [x] JAX-RS : Simple API with XML (JAX-B)
 - [x] JAX-RS : ExceptionMapper
@@ -37,6 +38,7 @@ These are the things I want to test with Quarkus.
 - [ ] Extension : Kotlin
 - [x] Extension : Kafka
 - [x] Extension : Vert.x
+- [ ] Extension : Reactive Postgres Client
 - [x] Others : Uploading multipart/form-data using JAX-RS (with RestEASY MultipartFormDataInput plugin)
 - [ ] Bug : UsersResourceTest is disabled (does not run when quarkus-smallrye-openapi is included)
 
@@ -59,10 +61,16 @@ Apache Maven 3.5.4 (1edded0938998edf8bf061f1ceb3cfdeccf443fe; 2018-06-17T20:33:1
 Maven home: /usr/local/Cellar/maven/3.5.4/libexec
 ```
 
+## Create a new empty project
+Create a new folder and run the command in there.
+```
+mvn io.quarkus:quarkus-maven-plugin:0.15.0:create
+```
+
 ## Note on MP-JWT and groups claim
 The MP-JWT decodes the JWT and use the `groups` claim to select `roles` for RBAC.  This mean that you 
 actually need a `group` claim  in the JWT token even if you do not actually use @RolesAllowed for RBAC
-in you code.  If your JWT doesn't contain `groups` claim - Quarkus 0.12 will throw a Null Pointer Exception.
+in you code.  If your JWT doesn't contain `groups` claim - Quarkus will throw a Null Pointer Exception.
 
 If you use KeyCloak as your OIDC server your `groups` are *not* mapped into claims by default.  You
 can manually add a client mapper for "User Realm Role" into "Token Claim Name" `groups` (for access-tokens when
