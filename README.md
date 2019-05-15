@@ -45,6 +45,7 @@ These are the things I want to test with Quarkus.
 ## Some comments ...
 > Doesn't require JAX-RS application (@ApplicationPath) <br/>
 > Doesn't require @Inject on config (@ConfigProperty) <br/>
+> Config using resources/application.properties or resources/META-INF/microprofile-config.properties
 > Web pages in META-INF/resources (no webapp) <br/>
 > Debugger works nice from IntelliJ (`Run -> Attach to Process`) <br/>
 
