@@ -41,10 +41,11 @@
             <artifactId>quarkus-resteasy-jsonb</artifactId>
         </dependency>
         <dependency>
-            <!-- must manually be kept in sync with resteasy version used by quarkus -->
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-multipart-provider</artifactId>
-            <version>4.0.0.CR2</version>
+            <!-- keep in sync with resteasy version used by quarkus
+            <version>4.0.0.Final</version>
+            -->
         </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
