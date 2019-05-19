@@ -90,10 +90,11 @@ curl -X POST 'https://localhost:9443/auth/realms/quarkus/protocol/openid-connect
 
 Get ID Token (using Direct Access Grants)
 ```
-curl -X POST -H "Content-Type:application/x-www-form-urlencoded" -d "scope=openid" -d "grant_type=password" \
+curl -X POST 'https://localhost:9443/auth/realms/quarkus/protocol/openid-connect/token' \
+-H "Content-Type:application/x-www-form-urlencoded" \
+-d "scope=openid" -d "grant_type=password" \
 -d "client_id=CLIENTID" -d "client_secret=CLIENTSECRET" \
 -d "username=USERNAME" -d "password=PASSWORD" \
-'https://localhost:9443/auth/realms/quarkus/protocol/openid-connect/token' \
 | jq -r '.id_token'
 ```
 
