@@ -10,7 +10,7 @@ import static org.hamcrest.CoreMatchers.startsWith;
 import static org.junit.jupiter.api.Assertions.*;
 
 @QuarkusTest
-public class XmlServiceTest {
+public class XmlResourceTest {
 
     @Test
     public void hello() {

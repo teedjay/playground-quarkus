@@ -9,7 +9,7 @@ import javax.ws.rs.core.MediaType;
 import java.util.UUID;
 
 @Path("/xml")
-public class XmlService {
+public class XmlResource {
 
     @ConfigProperty(name = "xml.message")
     String greeting;

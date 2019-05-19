@@ -26,7 +26,7 @@ These are the things I want to test with Quarkus.
 - [x] MicroProfile JWT (with Keycloak)
 - [x] MicroProfile TypeSafe REST Client
 - [ ] MicroProfile FaultTolerance
-- [x] MicroProfile Reactive Messaging & Streams (using Vert.x and Kafka extension)
+- [x] MicroProfile Reactive Messaging & Streams (using Kafka extension)
 - [x] Add SwaggerUI start page at http://localhost:8080/
 - [x] MongoDB (needs a MongoDB running on default port)
 - [x] Dockerfile for executable jar (openjdk11)
@@ -36,8 +36,8 @@ These are the things I want to test with Quarkus.
 - [x] Extension : Panache (database using Panache with JTA and JPA/JDBC)
 - [ ] Extension : Camel
 - [ ] Extension : Kotlin
-- [x] Extension : Kafka
-- [x] Extension : Vert.x
+- [x] Extension : Kafka (Reactive Messaging & Streams)
+- [x] Extension : Vert.x (EventBus and Async Messaging between beans)
 - [ ] Extension : Reactive Postgres Client
 - [x] Others : Uploading multipart/form-data using JAX-RS (with RestEASY MultipartFormDataInput plugin)
 - [ ] Bug : UsersResourceTest is disabled (does not run when quarkus-smallrye-openapi is included)

@@ -11,7 +11,7 @@ import java.io.StringReader;
 
 @Path("/json")
 @Produces(MediaType.APPLICATION_JSON)
-public class JsonPatcher {
+public class JsonPatcherResource {
 
     String inputJson = "{ 'id':'123', 'name':'tester' }".replace("'", "\"");
 
