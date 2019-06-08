@@ -25,7 +25,7 @@ public class PingResource {
     }
 
     @GET
-    @Path("/list")
+    @Path("list")
     public void listSomeUsers() {
         client.query("select * from users", ar -> {
             if (ar.succeeded()) {
@@ -37,7 +37,7 @@ public class PingResource {
     }
 
     @GET
-    @Path("/send/{message}")
+    @Path("send/{message}")
     public void publishMessage(@PathParam("message") String message) {
         postgresPubSub.sendNotification(message);
     }

@@ -23,7 +23,7 @@ public class SyncResource {
     ConverterService service;
 
     @GET
-    @Path("/{name}")
+    @Path("{name}")
     public JsonObject convertName(@PathParam("name") String name) {
         String message = String.format("Hello from '%s' on thread '%s'", name, Thread.currentThread().getName());
         return service.convertToJson(message);

@@ -36,6 +36,8 @@ These are the things I want to test with Quarkus.
 - [x] Extension : Panache (database using Panache with JTA and JPA/JDBC)
 - [ ] Extension : Camel
 - [ ] Extension : Kotlin
+- [x] Extension : Mailer
+- [x] Extension : Validation
 - [x] Extension : Kafka (Reactive Messaging & Streams)
 - [x] Extension : Vert.x (EventBus and Async Messaging between beans)
 - [ ] Extension : Reactive Postgres Client
@@ -65,7 +67,7 @@ Maven home: /usr/local/Cellar/maven/3.5.4/libexec
 ## Create a new empty project
 Create a new folder and run the command in there.
 ```
-mvn io.quarkus:quarkus-maven-plugin:0.15.0:create
+mvn io.quarkus:quarkus-maven-plugin:0.16.1:create
 ```
 
 ## Note on MP-JWT and groups claim

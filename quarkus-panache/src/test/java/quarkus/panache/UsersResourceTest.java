@@ -11,8 +11,20 @@ import static org.hamcrest.CoreMatchers.is;
 @QuarkusTest
 public class UsersResourceTest {
 
-    // Test is disabled because when quarkus-smallrye-openapi in the pom.xml
-    // the rest-assured test fails (running quarkus 0.15.0 on my Mac)
+    // These tests are disabled because when quarkus-smallrye-openapi in the pom.xml
+    // both rest-assured test fails (running quarkus 0.16.1 on my Mac)
+
+    @Test()
+    @Disabled
+    void getAllUsers() {
+        given()
+            .when().get("/users")
+            .then()
+                .statusCode(200)
+                .contentType(ContentType.JSON)
+                .body("[0].username", is("string"))
+        ;
+    }
 
     @Test()
     @Disabled

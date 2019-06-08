@@ -26,7 +26,7 @@ public class EventResource {
     EventBus bus;
 
     @GET
-    @Path("/{name}")
+    @Path("{name}")
     public CompletionStage<JsonObject> convertName(@PathParam("name") String name) {
         String message = String.format("Hello from '%s' on thread '%s'", name, Thread.currentThread().getName());
         return bus.<JsonObject>send("convert", message).thenApply(Message::body);
