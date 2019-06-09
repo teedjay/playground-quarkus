@@ -26,6 +26,7 @@
     <module>quarkus-mongo</module>
     <module>quarkus-panache</module>
     <module>quarkus-postgres</module>
+    <module>quarkus-undertow</module>
   </modules>
 
 </project>

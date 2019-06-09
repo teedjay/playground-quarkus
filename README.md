@@ -38,6 +38,7 @@ These are the things I want to test with Quarkus.
 - [ ] Extension : Kotlin
 - [x] Extension : Mailer
 - [x] Extension : Validation
+- [x] Extension : Undertow (Reverse Proxy and Predicates)
 - [x] Extension : Kafka (Reactive Messaging & Streams)
 - [x] Extension : Vert.x (EventBus and Async Messaging between beans)
 - [ ] Extension : Reactive Postgres Client
