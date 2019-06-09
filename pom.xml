@@ -2,13 +2,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-    <modelVersion>4.0.0</modelVersion>
+  <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.teedjay</groupId>
-    <artifactId>playground-quarkus</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+  <groupId>com.teedjay</groupId>
+  <artifactId>playground-quarkus</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
 
-    <packaging>pom</packaging>
+  <packaging>pom</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -19,13 +19,13 @@
 
     <!-- separate modules - not a single multi module parent -->
 
-    <modules>
-        <module>quarkus-basics</module>
-        <module>quarkus-kafka</module>
-        <module>quarkus-mongo</module>
-        <module>quarkus-panache</module>
-        <module>quarkus-postgres</module>
-    </modules>
+  <modules>
+    <module>quarkus-basics</module>
+    <module>quarkus-camel</module>
+    <module>quarkus-kafka</module>
+    <module>quarkus-mongo</module>
+    <module>quarkus-panache</module>
+    <module>quarkus-postgres</module>
+  </modules>
 
 </project>
-

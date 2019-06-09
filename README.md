@@ -34,7 +34,7 @@ These are the things I want to test with Quarkus.
 - [ ] Native executable using GraalVM on MacOS (worked earlier using java 8)
 - [x] Extension : Scheduler (triggers Kafka messages)
 - [x] Extension : Panache (database using Panache with JTA and JPA/JDBC)
-- [ ] Extension : Camel
+- [x] Extension : Camel
 - [ ] Extension : Kotlin
 - [x] Extension : Mailer
 - [x] Extension : Validation
