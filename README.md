@@ -68,7 +68,7 @@ Maven home: /usr/local/Cellar/maven/3.5.4/libexec
 ## Create a new empty project
 Create a new folder and run the command in there.
 ```
-mvn io.quarkus:quarkus-maven-plugin:0.16.1:create
+mvn io.quarkus:quarkus-maven-plugin:0.17.0:create
 ```
 
 ## Note on MP-JWT and groups claim
